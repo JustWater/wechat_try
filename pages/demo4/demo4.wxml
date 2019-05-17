@@ -1,0 +1,15 @@
+<!--pages/demo4/demo4.wxml-->
+<view class="container">
+  <scroll-view scroll-y="true" style="height:100%;">
+    <view class="header-container">
+
+      <!-- <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo">获取</button> -->
+      <block>
+        <!-- <open-data class="header-avatar" type="userAvatarUrl"></open-data>
+        <open-data class="header-nickname" type="userNickName" lang="zh_CN"></open-data> -->
+          <image class="header-avatar" src="{{userInfo.avatarUrl}}" />
+          <text class="header-nickname">{{userInfo.nickName}}</text>
+      </block>
+    </view>
+  </scroll-view>
+</view>

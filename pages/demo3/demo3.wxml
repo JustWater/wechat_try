@@ -1,0 +1,15 @@
+<!--pages/demo3/demo3.wxml-->
+<view class="container">
+  <scroll-view scroll-y="true" class="scroll-view" bindscrolltolower="onBindscrolltolower" style="height: 100%; background-color: #FFF;">
+    <view class="item-container" >
+      <view class="iamge-item-container" wx:for="{{girlData}}" wx:for-item="girlInfo">
+        <image class="image" src="{{girlInfo.url}}" mode="aspectFill" bindtap="onBannerPicClick" data-url="{{girlInfo.url}}"/>
+        <view class="tips-container">
+          <text style="flex:1">{{girlInfo.desc}}</text>
+          <text>{{girlInfo.who}}</text>
+        </view>
+      </view>
+      <include src="../common/loadmore.wxml" />
+    </view>
+  </scroll-view>
+</view>

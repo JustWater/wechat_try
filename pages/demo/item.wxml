@@ -1,0 +1,5 @@
+<template name="item">
+  <block wx:for="{{objectArray}}" wx:for-item="object">
+    <text>{{object.id}}</text>
+  </block>
+</template>

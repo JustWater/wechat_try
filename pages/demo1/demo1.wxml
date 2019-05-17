@@ -1,0 +1,21 @@
+<!--pages/demo1/demo1.wxml-->
+<!-- <button bindtap='clickMe'>跳转</button> -->
+<import src="demo-template.wxml" />
+<view class="container">
+  <loading hidden="{{loadingHidden}}">加载中...</loading>
+  <view class="title-tabs-bar-container">
+    <text wx:for="{{tabName}}" wx:for-item="item" wx:for-index="idx" bindtap="onTitleBarsClick" data-idx="{{idx}}"
+    class="title-tabs-bar-tab-text {{curSelClassifyIndex == idx ? 'title-tabs-bar-tab-text-selected' : '' }}">{{item}}</text>
+  </view>
+  <swiper style='flex: 1' current="{{curSelClassifyIndex}}" bindchange="onBindchange">
+    <swiper-item>
+      <template is="gankList" data="{{gankList:gankData['android']}}"></template>
+    </swiper-item>
+    <swiper-item>
+      <template is="gankList" data="{{gankList:gankData['ios']}}"></template>
+    </swiper-item>
+    <swiper-item>
+      <template is="gankList" data="{{gankList:gankData['web']}}"></template>
+    </swiper-item>
+  </swiper>
+</view>

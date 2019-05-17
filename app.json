@@ -1,0 +1,48 @@
+{
+  "pages": [
+    "pages/demo4/demo4",
+    "pages/demo1/demo1",
+    "pages/demo2/demo2",
+    "pages/demo3/demo3",
+    "pages/demo/demo",
+    "pages/showPic/showPic"
+  ],
+  "tabBar": {
+    "backgroundColor": "#FFF",
+    "color": "#000",
+    "selectedColor": "#FF5000",
+    "list": [
+      {
+        "iconPath": "image/tabicon/ic_home_tab_gank.png",
+        "selectedIconPath": "image/tabicon/ic_home_tab_gank.png",
+        "pagePath": "pages/demo1/demo1",
+        "text": "干货"
+      },
+      {
+        "iconPath": "image/tabicon/ic_home_tab_rec.png",
+        "selectedIconPath": "image/tabicon/ic_home_tab_rec.png",
+        "pagePath": "pages/demo2/demo2",
+        "text": "推荐"
+      },
+      {
+        "iconPath": "image/tabicon/ic_home_tab_girl.png",
+        "selectedIconPath": "image/tabicon/ic_home_tab_girl.png",
+        "pagePath": "pages/demo3/demo3",
+        "text": "妹纸"
+      },
+      {
+        "iconPath": "image/tabicon/ic_home_tab_collect.png",
+        "selectedIconPath": "image/tabicon/ic_home_tab_collect.png",
+        "pagePath": "pages/demo4/demo4",
+        "text": "我的"
+      }
+    ]
+  },
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#9C978B",
+    "navigationBarTitleText": "干货集中营",
+    "navigationBarTextStyle": "white"
+  },
+  "workers": "workers"
+}

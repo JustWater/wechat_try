@@ -1,0 +1,14 @@
+<template name="gankList">
+  <scroll-view class="scroll-style" scroll-y="true" bindscrolltolower="onBindscrolltolower">
+    <navigator wx:for="{{gankList}}" wx:for-item="gankInfo">
+      <view class='item-container'>
+        <text class='title'>{{gankInfo.desc}}</text>
+        <view class='item-other-info-container'>
+          <text>via：{{gankInfo.who}}</text>
+          <text>{{gankInfo.publishedAt}}</text>
+        </view>
+      </view>
+    </navigator>
+    <include src="../common/loadmore.wxml" />
+  </scroll-view>
+</template>

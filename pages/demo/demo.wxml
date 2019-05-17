@@ -1,0 +1,73 @@
+<!--pages/demo/demo.wxml-->
+<import src="item.wxml" />  <!-- 引入template模板 -->
+<view class='view'>
+  <map longitude="{{longitude}}" latitude="{{latitude}}" markers="{{markers}}" covers="{{covers}}" show-location>
+  </map>
+</view>
+<button bindtap="clickMi">点击我--demo1</button>
+<button bindtap="clickToHome">点击我--回到首页</button>
+<view>{{message}}</view>
+<text wx:for="{{array}}" wx:key="*this">{{item}}</text>
+<view wx:if="{{view == 'WEBVIEW'}}">WEBVIEW</view>
+<view wx:elif="{{view == 'APP'}}">APP</view>
+<view wx:else>MINA</view>
+<template name="staffName">
+  <view>FirstName: {{firstName}},LastName:{{lastName}}</view>
+</template>
+<template is="staffName" data="{{firstName: 'Hulk', lastName: 'Hu'}}"></template>
+<template is="staffName" data="{{...staffB}}"></template>
+<template is="staffName" data="{{...staffC}}"></template>
+<template is="staffName" data="{{firstName,lastName}}"></template>
+<template name="odd">
+  <view>odd</view>
+</template>
+<template name="even">
+  <view>even</view>
+</template>
+<block wx:for="{{[1, 2, 3, 4, 5]}}" wx:key="*this">
+  <template is="{{item % 2 == 0 ? 'even' : 'odd'}}" />
+</block>
+
+<view>{{a + b}} + {{c}} </view>
+
+<switch wx:for="{{objectArray}}" wx:key="unique" style="display: block;"> {{item.id}} </switch>
+<button bindtap="switch"> Switch </button>
+<button bindtap="addToFront"> Add to the front </button>
+ 
+<switch wx:for="{{numberArray}}" wx:key="*this" style="display: block;"> {{item}} </switch>
+<button bindtap="addNumberToFront"> Add to the front </button>
+
+<view wx:for="{{array1}}" wx:key="key">{{index}}:{{item.message}}</view>
+<view wx:for="{{array1}}" wx:for-index="idx" wx:for-item="item">{{idx}}:{{item.message}}</view>
+
+<block wx:for="{{[1, 2, 3, 4, 5, 6, 7, 8, 9]}}" wx:for-item="i">
+  <block wx:for="{{[1, 2, 3, 4, 5, 6, 7, 8, 9]}}" wx:for-item="j">
+    <view wx:if="{{i <= j}}">{{i}} * {{j}} = {{i * j}}</view>
+  </block>
+</block>
+
+<template is="item" data="{{objectArray:objectArray}}"></template>
+
+<wxs module="m1">var msg = "hello world"; module.exports.message = msg;</wxs>
+
+<view>{{m1.message}}</view>
+<!-- wxs标签, .wxs文件都是一个单独的模块 通过module.exports对外暴露内部的变量和函数-->
+<wxs module="m2">  
+  var getMax = function(array){
+    var max = undefined;
+    for(var i = 0; i< array.length; i++){
+      max = max === undefined ? array[i] : (max >= array[i] ? max : array[i]);
+    }
+    return max;
+  }
+  module.exports.getMax = getMax;
+</wxs>
+<view>{{m2.getMax(array)}}</view>
+<!-- 引入.wxs -->
+<wxs src="comm.wxs" module="m3" />
+<view>{{m3.bar(m3.Foo)}} {{m3.msg}}</view>
+
+<wxs src="logic.wxs" module="m4"/>
+<view id="tapTest" data-hi="WeChat">点击我</view>
+<view>1111</view>
+<view>1112</view>

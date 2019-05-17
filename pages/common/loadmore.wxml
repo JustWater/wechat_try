@@ -1,0 +1,3 @@
+<view class="load-more-container">
+  <text class="load-more-tips">加载更多数据...</text>
+</view>
